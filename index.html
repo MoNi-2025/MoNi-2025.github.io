@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技快讯 - 折叠本/芯片/AI技术全览</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-color: #ffffff;
+            --text-color: #1e293b;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .news-card {
+            background-color: var(--card-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .news-icon {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+        }
+
+        .news-title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        li {
+            margin-bottom: 0.25rem;
+        }
+
+        .cta-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.25rem;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #1e3a8a;
+        }
+
+        @media (max-width: 640px) {
+            .news-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .news-icon {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 今日科技快讯</h1>
+            <p>华为折叠本｜小米芯片｜Google I/O热点前瞻</p>
+        </header>
+
+        <div class="news-card">
+            <div class="news-header">
+                <span class="news-icon">💻</span>
+                <h2 class="news-title">华为发布首款可折叠笔记本 MateBook Fold</h2>
+            </div>
+            <ul>
+                <li>厚度仅 7.3 毫米</li>
+                <li>配备 18 英寸大屏</li>
+                <li>搭载 HarmonyOS 5 系统</li>
+                <li>售价约 3,300 美元</li>
+                <li>目前仅在中国市场推出</li>
+            </ul>
+        </div>
+
+        <div class="news-card">
+            <div class="news-header">
+                <span class="news-icon">📱</span>
+                <h2 class="news-title">OnePlus Pad 3：远程控制 Mac</h2>
+            </div>
+            <ul>
+                <li>支持 Mac 远程控制</li>
+                <li>提供文件传输与远程操作</li>
+                <li>搭载 Snapdragon 8 Elite 芯片</li>
+                <li>预计发布时间：6 月 5 日</li>
+            </ul>
+        </div>
+
+        <div class="news-card">
+            <div class="news-header">
+                <span class="news-icon">🔧</span>
+                <h2 class="news-title">小米官宣首颗旗舰芯片 Xring 01</h2>
+            </div>
+            <ul>
+                <li>采用 3nm 工艺</li>
+                <li>性能对标 Snapdragon 8 Elite</li>
+                <li>5 月 22 日正式发布</li>
+                <li>标志小米再次进军芯片自主研发</li>
+            </ul>
+        </div>
+
+        <div class="news-card">
+            <div class="news-header">
+                <span class="news-icon">🖥</span>
+                <h2 class="news-title">HP 发布新款 OmniBook 5 笔记本</h2>
+            </div>
+            <ul>
+                <li>提供 14 英寸/16 英寸 OLED 版本</li>
+                <li>搭载 Snapdragon X 系列芯片</li>
+                <li>官方宣称续航长达 34 小时</li>
+                <li>定位轻薄办公与 AI 计算场景</li>
+            </ul>
+        </div>
+
+        <div class="news-card">
+            <div class="news-header">
+                <span class="news-icon">🤖</span>
+                <h2 class="news-title">Google I/O 2025 即将开幕</h2>
+            </div>
+            <ul>
+                <li>AI 技术将成为核心展示内容</li>
+                <li>Android 系统不再是焦点</li>
+                <li>开发者和 AI 爱好者重点关注</li>
+            </ul>
+        </div>
+
+        <div class="news-card">
+            <div class="news-header">
+                <span class="news-icon">⚠️</span>
+                <h2 class="news-title">Meta 数据中心遭调查</h2>
+            </div>
+            <ul>
+                <li>计划使用天然气为数据中心供能</li>
+                <li>引发美国民主党议员关注与调查</li>
+            </ul>
+        </div>
+
+        <div class="news-card">
+            <div class="news-header">
+                <span class="news-icon">🎮</span>
+                <h2 class="news-title">Fortnite 仍无法重返 iOS</h2>
+            </div>
+            <ul>
+                <li>Epic Games 要求强制重新上架</li>
+                <li>目前仍无法在 iOS 设备使用</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h2>📌 更多每日科技更新</h2>
+            <p>欢迎关注我们获取实时科技资讯！</p>
+            <button class="cta-button">订阅更新</button>
+        </div>
+    </div>
+</body>
+</html>
