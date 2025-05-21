@@ -3,33 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>科技快讯 - 折叠本/芯片/AI技术全览</title>
+    <title>2025年5月21日科技日报</title>
     <style>
         :root {
-            --primary-color: #2563eb;
-            --bg-color: #f8fafc;
-            --card-color: #ffffff;
-            --text-color: #1e293b;
+            --primary-color: #2A5CAA; /* 科技蓝 */
+            --secondary-color: #E5E7EB; /* 未来银 */
+            --accent-color: #FF6B00; /* 创新橙 */
+            --bg-color: #FFFFFF; /* 纯净白 */
+            --text-color: #333333; /* 深空灰 */
+            --card-color: #FFFFFF;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        @font-face {
+            font-family: 'Alibaba PuHuiTi';
+            src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3-55-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: 'Alibaba PuHuiTi';
+            src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3-65-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: 'Alibaba PuHuiTi';
+            src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3-85-Bold.ttf') format('truetype');
+            font-weight: 700;
         }
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+            font-family: 'Alibaba PuHuiTi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
                         Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
         }
 
-        .container {
+        .tech-daily-container {
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        header {
+        .daily-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .main-title {
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-weight: 700;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .main-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .keywords {
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin: 1rem 0;
+        }
+
+        .publish-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .section-title {
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .title-icon {
+            margin-right: 0.5rem;
+            font-size: 1.6rem;
         }
 
         .news-card {
@@ -37,176 +115,364 @@
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .news-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
         }
 
-        .news-header {
+        .news-card.primary {
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .news-card h3 {
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .news-content {
+            font-family: 'Source Han Serif CN', serif;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .news-meta {
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .category {
+            background-color: var(--secondary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .highlight-data {
+            font-family: 'DIN Alternate', sans-serif;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .company-card {
+            background-color: var(--card-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .company-logo {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .company-card h3 {
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .company-card p {
+            flex-grow: 1;
             margin-bottom: 1rem;
         }
 
-        .news-icon {
-            font-size: 1.5rem;
-            margin-right: 0.75rem;
+        .data-point {
+            font-family: 'DIN Alternate', sans-serif;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
         }
 
-        .news-title {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            margin: 0;
-        }
-
-        ul {
-            padding-left: 1.5rem;
-            margin: 0.5rem 0;
-        }
-
-        li {
-            margin-bottom: 0.25rem;
-        }
-
-        .cta-section {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.5rem;
+        .chart-container {
+            background-color: var(--card-color);
             border-radius: 12px;
-            text-align: center;
-            margin-top: 2rem;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-top: 1.5rem;
         }
 
-        .cta-button {
-            display: inline-block;
+        .chart-description {
             margin-top: 1rem;
-            padding: 0.5rem 1.25rem;
-            background-color: #1e40af;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
+            font-size: 0.95rem;
         }
 
-        .cta-button:hover {
-            background-color: #1e3a8a;
+        .chart-source {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .news-list {
+            margin-top: 1.5rem;
+        }
+
+        .news-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            background-color: var(--card-color);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .news-time {
+            font-family: 'DIN Alternate', sans-serif;
+            font-weight: bold;
+            min-width: 60px;
+            color: var(--primary-color);
+        }
+
+        .news-item h4 {
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .daily-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--secondary-color);
+            text-align: center;
+        }
+
+        .subscription {
+            margin-bottom: 2rem;
+        }
+
+        .qrcode {
+            width: 150px;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin: 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #666;
         }
 
         @media (max-width: 640px) {
-            .news-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .tech-daily-container {
+                padding: 1rem;
             }
-            .news-icon {
+
+            .company-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-item {
+                flex-direction: column;
+            }
+
+            .news-time {
                 margin-bottom: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🔍 今日科技快讯</h1>
-            <p>华为折叠本｜小米芯片｜Google I/O热点前瞻</p>
+    <div class="tech-daily-container">
+        <!-- 头部区域 -->
+        <header class="daily-header">
+            <h1 class="main-title">2025年5月21日科技日报</h1>
+            <div class="keywords">今日焦点：AI芯片竞争｜科技巨头动态｜华为创新</div>
+            <div class="publish-info">发布时间：2025年5月21日 20:00</div>
         </header>
 
-        <div class="news-card">
-            <div class="news-header">
-                <span class="news-icon">💻</span>
-                <h2 class="news-title">华为发布首款可折叠笔记本 MateBook Fold</h2>
+        <!-- 头条新闻区 -->
+        <section class="headline-news">
+            <h2 class="section-title"><span class="title-icon">📱</span>今日头条</h2>
+            <div class="news-card primary">
+                <h3>英伟达H20禁运后华为加速推出昇腾920 AI芯片</h3>
+                <div class="news-content">
+                    在美国商务部宣布NVIDIA H20、AMD MI308等AI芯片出口至中国需要政府许可后，华为迅速做出反应，在合作伙伴大会上发布了下一代昇腾920（Ascend 920）AI芯片。这款芯片旨在替代被禁的英伟达产品，进一步强化华为在国内AI芯片市场的地位。NVIDIA CEO黄仁勋此前曾评价华为是"中国最强大的科技公司，征服了他们涉足的每一个市场"。<span class="highlight-data">分析师预计</span>，华为昇腾系列芯片将在国内AI基础设施建设中扮演更加重要的角色。
+                </div>
+                <div class="news-meta">
+                    <span class="category">AI芯片</span>
+                    <span class="source">来源：[1](@ref)</span>
+                </div>
             </div>
-            <ul>
-                <li>厚度仅 7.3 毫米</li>
-                <li>配备 18 英寸大屏</li>
-                <li>搭载 HarmonyOS 5 系统</li>
-                <li>售价约 3,300 美元</li>
-                <li>目前仅在中国市场推出</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="news-card">
-            <div class="news-header">
-                <span class="news-icon">📱</span>
-                <h2 class="news-title">OnePlus Pad 3：远程控制 Mac</h2>
+        <!-- 科技公司动态 -->
+        <section class="company-updates">
+            <h2 class="section-title"><span class="title-icon">🏢</span>公司动态</h2>
+            <div class="company-grid">
+                <div class="company-card">
+                    <div class="company-logo">🔍</div>
+                    <h3>微软</h3>
+                    <p>微软成立新的消费AI部门"Microsoft AI"，并聘请了Inflection AI的联合创始人Mustafa Suleyman和Karén Simonyan，以及Inflection AI的大部分团队成员。微软AI业务"年化收入"已突破<span class="highlight-data">130亿美元</span>，同比增长<span class="highlight-data">175%</span>。</p>
+                    <div class="data-point">Azure云业务本季营收增幅预计<span class="highlight-data">31%~32%</span></div>
+                    <div class="source">来源：[2](@ref)[4](@ref)</div>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-logo">🍎</div>
+                    <h3>苹果</h3>
+                    <p>苹果与阿里巴巴正式确认合作关系，消息公布后阿里巴巴美股涨幅达<span class="highlight-data">5.55%</span>。苹果在2024年第四季度录得"历史最好"的季度业绩，但大中华区成其唯一收入下滑市场，同比下降<span class="highlight-data">11%</span>至185.13亿美元。</p>
+                    <div class="data-point">iPhone全球营收<span class="highlight-data">691.38亿美元</span></div>
+                    <div class="source">来源：[4](@ref)[5](@ref)</div>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-logo">🖥️</div>
+                    <h3>英伟达</h3>
+                    <p>英伟达CEO黄仁勋宣布将在四年内向美国投入<span class="highlight-data">5000亿美元</span>实现本土制造芯片。同时，英伟达正加紧开发另一款符合美国出口规定的对华"特供版"AI芯片，最快将于今年6月量产出货。</p>
+                    <div class="data-point">Blackwell芯片预计2024年Q4出货<span class="highlight-data">45万颗</span></div>
+                    <div class="source">来源：[2](@ref)[4](@ref)</div>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-logo">🌐</div>
+                    <h3>谷歌</h3>
+                    <p>谷歌在多个团队（包括硬件和Google Assistant团队）中裁减了超<span class="highlight-data">1,000名</span>员工，以更加专注于其AI产品，如Gemini GenAI（前身为Bard）。谷歌CEO Sundar Pichai表示，预计在整个2024年还会有更多的裁员。</p>
+                    <div class="data-point">2024年将削减<span class="highlight-data">10%</span>的管理职位</div>
+                    <div class="source">来源：[1](@ref)</div>
+                </div>
             </div>
-            <ul>
-                <li>支持 Mac 远程控制</li>
-                <li>提供文件传输与远程操作</li>
-                <li>搭载 Snapdragon 8 Elite 芯片</li>
-                <li>预计发布时间：6 月 5 日</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="news-card">
-            <div class="news-header">
-                <span class="news-icon">🔧</span>
-                <h2 class="news-title">小米官宣首颗旗舰芯片 Xring 01</h2>
+        <!-- 数据可视化区 -->
+        <section class="data-visualization">
+            <h2 class="section-title"><span class="title-icon">📊</span>数据聚焦</h2>
+            <div class="chart-container">
+                <div style="background-color: #f5f7fa; padding: 20px; border-radius: 8px; text-align: center;">
+                    <h3 style="margin-top: 0;">2025年科技巨头资本支出预测</h3>
+                    <div style="display: flex; height: 200px; margin: 20px 0; align-items: flex-end; justify-content: center;">
+                        <div style="width: 60px; margin: 0 10px; background: linear-gradient(to top, #2A5CAA, #4d7fc0); height: 100%; position: relative;">
+                            <div style="position: absolute; top: -25px; left: 0; right: 0; text-align: center;">3310亿</div>
+                            <div style="position: absolute; bottom: -25px; left: 0; right: 0; text-align: center;">总支出</div>
+                        </div>
+                        <div style="width: 60px; margin: 0 10px; background: linear-gradient(to top, #FF6B00, #ff9248); height: 80%; position: relative;">
+                            <div style="position: absolute; top: -25px; left: 0; right: 0; text-align: center;">80%</div>
+                            <div style="position: absolute; bottom: -25px; left: 0; right: 0; text-align: center;">AI相关</div>
+                        </div>
+                        <div style="width: 60px; margin: 0 10px; background: linear-gradient(to top, #2A5CAA, #4d7fc0); height: 60%; position: relative;">
+                            <div style="position: absolute; top: -25px; left: 0; right: 0; text-align: center;">60%</div>
+                            <div style="position: absolute; bottom: -25px; left: 0; right: 0; text-align: center;">基础设施</div>
+                        </div>
+                        <div style="width: 60px; margin: 0 10px; background: linear-gradient(to top, #2A5CAA, #4d7fc0); height: 40%; position: relative;">
+                            <div style="position: absolute; top: -25px; left: 0; right: 0; text-align: center;">40%</div>
+                            <div style="position: absolute; bottom: -25px; left: 0; right: 0; text-align: center;">研发</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-description">
+                    谷歌、Meta、亚马逊、微软和特斯拉2025年的累计资本支出预计将高达<span class="highlight-data">3310亿美元</span>。其中，AI相关投资占比达<span class="highlight-data">80%</span>以上，主要用于AI基础设施建设和研发。企业开始从过去的AI投资中寻求回报，概念验证正在转向企业范围的部署，以释放人工智能的全部投资回报。
+                </div>
+                <div class="chart-source">数据来源：[4](@ref)[5](@ref)</div>
             </div>
-            <ul>
-                <li>采用 3nm 工艺</li>
-                <li>性能对标 Snapdragon 8 Elite</li>
-                <li>5 月 22 日正式发布</li>
-                <li>标志小米再次进军芯片自主研发</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="news-card">
-            <div class="news-header">
-                <span class="news-icon">🖥</span>
-                <h2 class="news-title">HP 发布新款 OmniBook 5 笔记本</h2>
+        <!-- 科技简讯区 -->
+        <section class="news-briefs">
+            <h2 class="section-title"><span class="title-icon">📰</span>科技简讯</h2>
+            <div class="news-list">
+                <div class="news-item">
+                    <span class="news-time">09:15</span>
+                    <div class="news-content">
+                        <h4>微软预测2025年六大AI趋势</h4>
+                        <p>微软发布2025年AI趋势展望，预测更快、更好、更专业化的模型将创造新的AI体验。微软业务发展副总裁Chris Young表示："人工智能已经将不可能变为可能，这是技术全面转型的开始，它将改变我们生活的方方面面。"</p>
+                        <div class="news-meta">
+                            <span class="category">AI趋势</span>
+                            <span class="source">来源：[2](@ref)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-time">11:30</span>
+                    <div class="news-content">
+                        <h4>英伟达否认在华成立合资公司传闻</h4>
+                        <p>针对英伟达可能在中国设立合资企业的传闻，英伟达官方回应称："此传闻为假消息，这些说法没有任何依据。将毫无根据的主张和猜测作为事实发表是不负责任的。"</p>
+                        <div class="news-meta">
+                            <span class="category">企业动态</span>
+                            <span class="source">来源：[3](@ref)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-time">14:45</span>
+                    <div class="news-content">
+                        <h4>英特尔计划推出新一代AI芯片Jaguar Shores</h4>
+                        <p>英特尔在SC24大会中透露将推出名为"Jaguar Shores"的AI芯片。此前英特尔CEO帕特・基辛格曾提到该公司正在研发一款名称暂定为"Falcon Shores 2"的AI超算芯片，计划2026年推出。</p>
+                        <div class="news-meta">
+                            <span class="category">芯片技术</span>
+                            <span class="source">来源：[4](@ref)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-time">16:20</span>
+                    <div class="news-content">
+                        <h4>NVIDIA GTC 2025全球AI盛会即将举行</h4>
+                        <p>NVIDIA宣布将举办GTC 2025全球AI盛会，这是面向开发者、企业领袖和AI研究人员的重要活动，将包括网络会议、培训、演示等内容，展示最新AI技术发展和应用。</p>
+                        <div class="news-meta">
+                            <span class="category">行业活动</span>
+                            <span class="source">来源：[3](@ref)</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ul>
-                <li>提供 14 英寸/16 英寸 OLED 版本</li>
-                <li>搭载 Snapdragon X 系列芯片</li>
-                <li>官方宣称续航长达 34 小时</li>
-                <li>定位轻薄办公与 AI 计算场景</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="news-card">
-            <div class="news-header">
-                <span class="news-icon">🤖</span>
-                <h2 class="news-title">Google I/O 2025 即将开幕</h2>
+        <!-- 底部区域 -->
+        <footer class="daily-footer">
+            <div class="subscription">
+                <p>🔔 每日科技资讯，尽在掌握</p>
+                <div class="qrcode">科技日报公众号二维码</div>
+                <p>长按识别二维码关注我们</p>
             </div>
-            <ul>
-                <li>AI 技术将成为核心展示内容</li>
-                <li>Android 系统不再是焦点</li>
-                <li>开发者和 AI 爱好者重点关注</li>
-            </ul>
-        </div>
-
-        <div class="news-card">
-            <div class="news-header">
-                <span class="news-icon">⚠️</span>
-                <h2 class="news-title">Meta 数据中心遭调查</h2>
+            <div class="disclaimer">
+                免责声明：本科技日报内容仅供参考，不构成投资建议。部分内容整理自互联网，如有侵权请联系删除。
             </div>
-            <ul>
-                <li>计划使用天然气为数据中心供能</li>
-                <li>引发美国民主党议员关注与调查</li>
-            </ul>
-        </div>
-
-        <div class="news-card">
-            <div class="news-header">
-                <span class="news-icon">🎮</span>
-                <h2 class="news-title">Fortnite 仍无法重返 iOS</h2>
+            <div class="copyright">
+                © 2025 科技日报团队 版权所有
             </div>
-            <ul>
-                <li>Epic Games 要求强制重新上架</li>
-                <li>目前仍无法在 iOS 设备使用</li>
-            </ul>
-        </div>
-
-        <div class="cta-section">
-            <h2>📌 更多每日科技更新</h2>
-            <p>欢迎关注我们获取实时科技资讯！</p>
-            <button class="cta-button">订阅更新</button>
-        </div>
+        </footer>
     </div>
 </body>
 </html>
